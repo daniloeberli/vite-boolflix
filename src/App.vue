@@ -20,12 +20,13 @@ export default {
             axios.get(store.config.movieApi, {
                 params: {
                     api_key: store.config.apiKey,
-                    query: store.config.query
+                    query: store.query
                 }
             })
                 .then((response) => {
                     console.log(response.data.results);
-                    store.movies.value = response.data.results
+                    store.movies = response.data.results
+                    console.log(store.movies.value)
                 })
         }
     }
@@ -34,12 +35,18 @@ export default {
 </script>
 
 <template>
-    <div class="input-group mb-3">
-        <input v-model="store.config.query" type="text" class="form-control" placeholder="Recipient's username"
-            aria-label="Recipient's username" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-            <button @click="getMovie" class="btn btn-outline-secondary" type="button">Button</button>
-        </div>
+    <form @submit.prevent="getMovie">
+        <input v-model="store.query" type="search" name="search-movie" id="search-movie">
+        <button>Search</button>
+    </form>
+    <div v-for="movie in store.movies">
+        <h3>{{ movie.title }}</h3>
+        <ul>
+            <li><span>Titolo:</span> {{ movie.title }}</li>
+            <li><span>Titolo originale:</span>{{ movie.original_title }}</li>
+            <li><span>Lingua:</span>{{ movie.original_language }}</li>
+            <li><span>Valutazione media:</span>{{ movie.vote_average }}</li>
+        </ul>
     </div>
 </template>
 
