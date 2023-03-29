@@ -25,7 +25,7 @@ export default {
             })
                 .then((response) => {
                     console.log(response.data.results);
-                    this.store.movies = response.data.results
+                    store.movies.value = response.data.results
                 })
         }
     }
