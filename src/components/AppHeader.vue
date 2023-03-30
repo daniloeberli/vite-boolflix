@@ -11,7 +11,7 @@ export default {
 
 </script>
 <template>
-    <form @submit.prevent="$emit('prova')">
+    <form @submit.prevent="$emit('search')">
         <input v-model="store.query" type="search" name="search-movie" id="search-movie">
         <button>Search</button>
     </form>
