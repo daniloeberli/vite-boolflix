@@ -20,7 +20,8 @@ export default {
             axios.get(store.config.movieApi, {
                 params: {
                     api_key: store.config.apiKey,
-                    query: store.query
+                    query: store.query,
+                    language: 'it-IT'
                 }
             })
                 .then((response) => {
@@ -36,7 +37,7 @@ export default {
                 }
             })
                 .then((response) => {
-                    console.log(response.data.results);
+                    //console.log(response.data.results);
                     store.series = response.data.results;
                     //console.log(store.series.value)
                 })
@@ -48,10 +49,11 @@ export default {
 </script>
 
 <template>
-    <form @submit.prevent="getContent">
-        <input v-model="store.query" type="search" name="search-movie" id="search-movie">
-        <button>Search</button>
-    </form>
+    <!--header app, ricerca film e serie tv-->
+    <AppHeader @prova="getContent"></AppHeader>
+
+
+
     <h1>Film</h1>
     <div v-for="movie in store.movies">
         <h3>{{ movie.title }}</h3>
