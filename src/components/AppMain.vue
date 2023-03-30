@@ -2,14 +2,14 @@
 import { store } from '../store'
 import Card from './Card.vue';
 
-export default{
+export default {
     name: 'Main',
 
-    components:{
+    components: {
         Card
     },
-    data(){
-        return{
+    data() {
+        return {
             store
         }
     }
@@ -17,18 +17,22 @@ export default{
 
 </script>
 <template>
-    <h1>Film</h1>
+    <!-- sezione film-->
+    <section>
+        <h1>Film trovati: <span>{{ this.store.movies.length }}</span> </h1>
+        <div v-for="movie in store.movies">
+            <Card :info="movie"></Card>
+        </div>
+    </section>
 
-    <div v-for="movie in store.movies">
-        <Card :info="movie"></Card>
-    </div>
+    <!--sezione serie tv-->
+    <section>
+        <h1>Serie tv trovate: <span>{{ this.store.series.length }}</span></h1>
+        <div v-for="serie in store.series">
+            <Card :info="serie"></Card>
+        </div>
+    </section>
 
-
-    <h1>Serie tv</h1>
-
-    <div v-for="serie in store.series">
-        <Card :info="serie"></Card>
-    </div>
-
+    
 </template>
 <style lang="scss" scoped></style>

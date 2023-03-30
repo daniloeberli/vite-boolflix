@@ -19,6 +19,7 @@ export default {
     },
     methods: {
         getContent() {
+            //metodo che riceve le info dall'API per i film e le serie tv
             axios.get(store.config.movieApi, {
                 params: {
                     api_key: store.config.apiKey,
@@ -50,6 +51,7 @@ export default {
     <!--header app, ricerca film e serie tv-->
     <AppHeader @search="getContent"></AppHeader>
 
+    <!--sezione princiale di visualizzazione dei risultati-->
     <AppMain></AppMain>
     
 </template>
