@@ -38,11 +38,16 @@ export default {
                 case 'ko':
                     return 'kr';
                 case 'ja':
-                    return 'jp'    
+                    return 'jp';
+                case 'sr':
+                    return 'rs'        
                 default:
                     return this.info.original_language
 
             }
+        },
+        getImage(){
+            return `https://image.tmdb.org/t/p/w342${this.info.backdrop_path}`
         }
     }
 }
@@ -51,6 +56,7 @@ export default {
     <!-- struttura della card per film/serie tv-->
     <article>
         <ul>
+            <img class="img-fluid" :src=getImage :alt=getOriginalTitle>
             <li><span>Titolo:</span> {{ getTitle }}</li>
             <li><span>Titolo originale:</span>{{ getOriginalTitle }}</li>
             <li><country-flag :country='getLanguage' size='small'/></li>
