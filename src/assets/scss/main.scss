@@ -1,4 +1,9 @@
 @use '_partial/reset' as *;
 @use '_partial/variables' as *;
 
-@import "../../../node_modules/bootstrap/scss/bootstrap.scss"
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body{
+    font-family: 'Bebas Neue', cursive;
+}
