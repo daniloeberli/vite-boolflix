@@ -63,9 +63,10 @@ export default {
             <img class="img-fluid thumbnail" :src=getImage :alt=getOriginalTitle>
         </div>
         <div class="card-text">
+            <!-- <span v-show="this.date > 2018" class="badge bg-info text-dark">New</span> -->
             <h2><span>Titolo:</span> {{ getTitle }}</h2>
             <h3><span>Titolo originale:</span>{{ getOriginalTitle }}</h3>
-            <div><country-flag :country='getLanguage' size='medium' /></div>
+            <div><country-flag :country='getLanguage' size='small' /></div>
             <font-awesome-icon style="color:gold" icon="fa-solid fa-star" v-for="n in getVote" />
             <font-awesome-icon style="color:gold" icon="fa-regular fa-star" v-for="n in 5 - getVote" />
             <p class="overview"><span>Overview:</span>{{ this.info.overview }}</p>
@@ -79,6 +80,7 @@ article {
     background-color: transparent;
     max-width: 350px;
     margin: 40px 0;
+    min-height: 500px;
 }
 
 article:hover .card-text {

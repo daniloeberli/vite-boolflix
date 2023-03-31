@@ -25,7 +25,7 @@ export default {
     <main>
         <div class="container">
             <!-- sezione film serie tv-->
-            <h1 class="text-center" v-if="results.length == 0 ">Let's find something else!</h1>
+            <h1 class="text-center" v-if="results.length == 0">Let's find something else!</h1>
             <h1 v-else='results.length > 0'>Content found: <span>{{ results.length }}</span> </h1>
             <section>
                 <div class="row justify-content-between">
