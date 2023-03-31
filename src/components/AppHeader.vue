@@ -11,12 +11,6 @@ export default {
 
 </script>
 <template>
-    <!-- <form @submit.prevent="$emit('search')">
-                        <input v-model="store.query" type="search" name="search-movie" id="search-movie">
-                        <button>Search</button>
-                    </form> -->
-
-    <!--bootstrap prova-->
     <header>
         <div class="container d-flex align-items-center">
             <div class="logo">
@@ -26,7 +20,6 @@ export default {
                 <label class="sr-only d-none" for="inlineFormInputName2">Name</label>
                 <input v-model="store.query" type="search" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2"
                     placeholder="Cerca nel catalogo">
-               <!-- <button type="submit" class="btn btn-primary mb-2">Submit</button> -->
             </form>
         </div>
     </header>

@@ -27,7 +27,7 @@ export default {
             <!-- sezione film serie tv-->
             <h1>Movie & Tv</h1>
             <section>
-                <div class="row">
+                <div class="row justify-content-between">
                     <Card class="col-12 col-lg-4" v-for="result in results" :info="result"></Card>
                 </div>
             </section>
@@ -39,6 +39,7 @@ export default {
 main {
     h1 {
         color: white;
+        padding: 20px 0;
     }
 }
 </style>
