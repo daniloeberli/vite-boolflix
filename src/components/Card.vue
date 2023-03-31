@@ -49,7 +49,7 @@ export default {
         getImage() {
             //metodo che ci restituisce la thumbnail, se non esiste mostra img placeholder
             if (this.info.poster_path === null) {
-                return `https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png`
+                return `https://picsum.photos/342/513`
             } else {
                 return `https://image.tmdb.org/t/p/w342${this.info.poster_path}`
             }
