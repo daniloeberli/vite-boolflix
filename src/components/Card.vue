@@ -62,15 +62,14 @@ export default {
         <div class="card-img">
             <img class="img-fluid thumbnail" :src=getImage :alt=getOriginalTitle>
         </div>
-        <ul class="card-text">
-            <li><span>Titolo:</span> {{ getTitle }}</li>
-            <li><span>Titolo originale:</span>{{ getOriginalTitle }}</li>
-            <li><country-flag :country='getLanguage' size='small' /></li>
-            <li><span>Valutazione media:</span>{{ getVote }}</li>
+        <div class="card-text">
+            <h2><span>Titolo:</span> {{ getTitle }}</h2>
+            <h3><span>Titolo originale:</span>{{ getOriginalTitle }}</h3>
+            <div><country-flag :country='getLanguage' size='medium' /></div>
             <font-awesome-icon style="color:gold" icon="fa-solid fa-star" v-for="n in getVote" />
             <font-awesome-icon style="color:gold" icon="fa-regular fa-star" v-for="n in 5 - getVote" />
-            <li class="overview"><span>Overview:</span>{{ this.info.overview }}</li>
-        </ul>
+            <p class="overview"><span>Overview:</span>{{ this.info.overview }}</p>
+        </div>
     </article>
 </template>
 
@@ -98,16 +97,9 @@ article:hover .card-img {
     max-height: 200px;
     overflow-y: auto;
 }
-
-li {
+h2,h3,p{
     color: white;
-    font-weight: 300;
+    font-weight: 500;
+}
 
-    span {
-        font-size: 18px;
-        font-weight: 500;
-    }
-
-    
-
-}</style>
+</style>

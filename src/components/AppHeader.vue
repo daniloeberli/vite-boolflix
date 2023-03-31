@@ -27,21 +27,15 @@ export default {
 <style lang="scss" scoped>
 header {
     background-color: #32393d;
-
     padding: 30px 0;
-
     .logo{
         padding-right: 15%;
     }
-
     img {
         max-width: 100px;
     }
-
     form{
         flex-grow: 1;
     }
 }
-
-
 </style>

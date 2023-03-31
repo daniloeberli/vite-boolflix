@@ -30,6 +30,11 @@ export default {
                 .then((response) => {
                     store.movies = response.data.results;
                 })
+                .catch((error) => {
+                    console.log(error);
+                    this.store.movies = []
+
+                })
 
             axios.get(store.config.tvApi, {
                 params: {
@@ -40,7 +45,18 @@ export default {
                 .then((response) => {
                     store.series = response.data.results;
                 })
+                .catch((error) => {
+                    console.log(error);
+                    this.store.series = []
 
+                })
+        },
+        login() {
+            if (store.password === '89') {
+                return true
+            } else {
+                return false
+            }
         }
     }
 }
@@ -48,12 +64,32 @@ export default {
 </script>
 
 <template>
-    <!--header app, ricerca film e serie tv-->
-    <AppHeader @search="getContent"></AppHeader>
-
-    <!--sezione princiale di visualizzazione dei risultati-->
-    <AppMain></AppMain>
+    <!-- PASSWORD: 89-->
+    <div :class="{ active: login() }" class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input v-model="store.password" type="password" class="form-control" id="exampleInputPassword1"
+            placeholder="Password">
+    </div>
+    <div v-show="login()" class="prova">
+        <AppHeader @search="getContent"></AppHeader>
+        <AppMain></AppMain>
+    </div>
 </template>
 
 <style scoped>
+.form-group {
+    position: absolute;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.active {
+    display: none;
+}
+
+label {
+    visibility: hidden;
+}
 </style>

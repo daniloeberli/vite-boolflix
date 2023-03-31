@@ -1,6 +1,7 @@
 import { reactive } from 'vue';
 
 export const store = reactive({
+    password: '',
     movies: [], // array di film
     series: [], // array di serie tv
     query: '', // variabile in cui registriamo la search query
