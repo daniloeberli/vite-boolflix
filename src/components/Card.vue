@@ -16,11 +16,11 @@ export default {
         },
         getTitle() {
             // implementazione logica a seconda che sia film o serie tv
-            return this.info.title ? this.info.title : this.info.name
+            return this.info.title || this.info.name
         },
         getOriginalTitle() {
             // implementazione logica a seconda che sia film o serie tv
-            return this.info.original_title ? this.info.original_title : this.info.original_name
+            return this.info.original_title || this.info.original_name
         },
         getLanguage() {
             //switch per i casi limite delle lingue
@@ -60,17 +60,30 @@ export default {
 <template>
     <!-- struttura della card per film/serie tv-->
     <article>
-        <ul>
-            <img class="img-fluid" :src=getImage :alt=getOriginalTitle>
+        <img class="img-fluid" :src=getImage :alt=getOriginalTitle>
+        <ul class="show">
             <li><span>Titolo:</span> {{ getTitle }}</li>
             <li><span>Titolo originale:</span>{{ getOriginalTitle }}</li>
             <li><country-flag :country='getLanguage' size='small' /></li>
             <li><span>Valutazione media:</span>{{ getVote }}</li>
-            <font-awesome-icon icon="fa-solid fa-star" v-for="n in getVote" />
-            <font-awesome-icon icon="fa-regular fa-star" v-for="n in 5 - getVote" />
+            <font-awesome-icon style="color:gold" icon="fa-solid fa-star" v-for="n in getVote" />
+            <font-awesome-icon style="color:gold" icon="fa-regular fa-star" v-for="n in 5 - getVote" />
         </ul>
     </article>
+
+    <!--BOOTSTRAP PROVA-->
+
 </template>
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+article{
+    background-color: 	#2d2d2d;
+}
+
+li{
+    color: white;
+}
+
+</style>

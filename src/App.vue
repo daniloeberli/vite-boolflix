@@ -53,7 +53,7 @@ export default {
 
     <!--sezione princiale di visualizzazione dei risultati-->
     <AppMain></AppMain>
-    
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>

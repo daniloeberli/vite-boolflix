@@ -12,27 +12,33 @@ export default {
         return {
             store
         }
+    },
+    computed: {
+        results() {
+            return [...this.store.movies, ...this.store.series]
+        }
     }
 }
-
 </script>
+
 <template>
-    <!-- sezione film-->
-    <section>
-        <h1>Film trovati: <span>{{ this.store.movies.length }}</span> </h1>
-        <div v-for="movie in store.movies">
-            <Card :info="movie"></Card>
+    <main>
+        <div class="container">
+            <!-- sezione film serie tv-->
+            <h1>Movie & Tv</h1>
+            <section>
+                <div class="row">
+                    <Card class="col-12 col-lg-4" v-for="result in results" :info="result"></Card>
+                </div>
+            </section>
         </div>
-    </section>
-
-    <!--sezione serie tv-->
-    <section>
-        <h1>Serie tv trovate: <span>{{ this.store.series.length }}</span></h1>
-        <div v-for="serie in store.series">
-            <Card :info="serie"></Card>
-        </div>
-    </section>
-
-    
+    </main>
 </template>
-<style lang="scss" scoped></style>
+
+<style lang="scss" scoped>
+main {
+    h1 {
+        color: white;
+    }
+}
+</style>
