@@ -42,7 +42,8 @@ export default {
                         </button>
                         <button @click="logOut" type="button" class="btn btn-danger">Logout</button>
                     </div>
-                </div>    
+                </div>   
+                <!--/offcanvas bootstrap-->   
             </form>
         </div>
     </header>

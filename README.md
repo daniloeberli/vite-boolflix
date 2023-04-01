@@ -10,9 +10,11 @@ Install my-project with npm
 ```
 ## Features
 
-- Simple Netflix replica
-- Fully reactive
-- Search Movie and Tv series
+- "password" login
+- offcanvas with logout and "help center"
+- fully reactive
+- search Movie and Tv series
+- (BUG!) New content with bootstrap tag
 ## API Documentation
 
 [Documentation](https://developers.themoviedb.org/3/getting-started/introduction)

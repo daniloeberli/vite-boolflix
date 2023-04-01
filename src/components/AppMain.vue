@@ -25,8 +25,8 @@ export default {
     <main>
         <div class="container">
             <!-- sezione film serie tv-->
-            <h1 class="text-center" v-if="results.length == 0">Let's find something else!</h1>
-            <h1 v-else='results.length > 0'>Content found: <span>{{ results.length }}</span> </h1>
+            <h1 v-show="results.length > 0 && store.query != ''">Content found: <span>{{ results.length }}</span> </h1>
+            <h1 class="text-center" v-show="results.length == 0">New Search ?</h1>
             <section>
                 <div class="row justify-content-between">
                     <Card class="col-12 col-lg-4" v-for="result in results" :info="result"></Card>
