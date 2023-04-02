@@ -70,7 +70,7 @@ export default {
         <input v-model="store.password" type="password" class="form-control" id="exampleInputPassword1"
             placeholder="Password">
     </div>
-    <div v-show="login()" class="prova">
+    <div v-show="login()">
         <AppHeader @search="getContent"></AppHeader>
         <AppMain></AppMain>
     </div>

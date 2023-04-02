@@ -87,6 +87,7 @@ article:hover .card-text {
     display: block;
 }
 
+
 article:hover .card-img {
     display: none;
 }
@@ -99,9 +100,11 @@ article:hover .card-img {
     max-height: 200px;
     overflow-y: auto;
 }
-h2,h3,p{
+
+h2,
+h3,
+p {
     color: white;
     font-weight: 500;
 }
-
 </style>
